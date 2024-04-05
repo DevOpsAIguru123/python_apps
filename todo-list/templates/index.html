@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Styles remain the same */
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <form action="/add" method="post">
+        <input type="text" name="task" placeholder="Enter a task...">
+        <input type="submit" value="Add Task">
+    </form>
+    <ul>
+        {% for index, task in tasks %}
+            <li>
+                {{ task }}
+                <a href="/edit/{{ index }}">Edit</a>
+                <a href="/delete/{{ index }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+ 
