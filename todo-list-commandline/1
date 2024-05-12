@@ -1,6 +1,0 @@
-DB_HOST=localhost
-DB_USER=root
-DB_PORT=3309
-DB_PASSWORD=kgp3cvz7sb9s
-DB_NAME=todo_list
-
