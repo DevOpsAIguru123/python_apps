@@ -1,0 +1,57 @@
+/* Apply a background image and style the page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background: url('https://source.unsplash.com/1600x900/?nature,sky') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Style the input and button elements */
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Style the weather information */
+.weather-info {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.weather-info h2, .weather-info p {
+    margin: 10px 0;
+}
+
+.weather-info img {
+    width: 100px;
+}
+
+/* Add some spacing around the form */
+form {
+    margin: 20px 0;
+}
