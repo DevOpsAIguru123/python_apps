@@ -1,0 +1,83 @@
+Datadog
+
+Given your current Databricks monitoring setup with Datadog (including cluster/job monitoring, user activity, SQL queries, object usage, and DBU metrics), here are suggested alert types organized by category:
+
+⸻
+
+1. Cluster & Job Performance Alerts
+	•	High Cluster CPU Utilization:
+Condition: CPU usage > 85% for 10 mins.
+	•	High Memory Usage:
+Condition: Memory utilization > 85% for 10 mins.
+	•	Long Job Runtime:
+Condition: Job runtime exceeds historical average by >50%.
+	•	Job Failure Rate:
+Condition: Job failure rate increases above threshold (e.g., 5% failures in 24h).
+
+⸻
+
+2. Workspace User Activity Alerts
+	•	Spike in Active Users:
+Condition: Active user count increases significantly (e.g., 25% above daily average).
+	•	Unauthorized Login Attempts:
+Condition: Multiple failed login attempts from the same user or IP within a short period.
+	•	Sudden Drop in User Activity:
+Condition: Active users significantly drop (>40%) from historical weekly average.
+
+⸻
+
+3. SQL Query Execution Alerts
+	•	Spike in SQL Query Volume:
+Condition: Queries executed per hour > 50% above historical hourly average.
+	•	High Query Latency:
+Condition: Average SQL query latency > threshold (e.g., 2x average latency).
+	•	High Query Failure Rate:
+Condition: SQL query failure rate >5% within an hour.
+
+⸻
+
+4. Workspace Objects Monitoring
+	•	Rapid Growth in Objects:
+Condition: Sudden spike in number of tables, schemas, or volumes (>15% increase in a single day).
+	•	Deletion of Critical Objects:
+Condition: Alert immediately if critical schemas, catalogs, or volumes are deleted.
+	•	Service Principals/Group Count Spike:
+Condition: Sudden spike (>10%) in the count of service principals or groups.
+
+⸻
+
+5. Workspace DBU Usage Alerts
+	•	Weekly DBU Spike:
+Condition: Weekly DBU consumption >25% above average weekly consumption.
+	•	Monthly DBU Usage Approaching Quota:
+Condition: Monthly DBU usage reaches 80% of allocated DBU budget.
+	•	Year-over-Year DBU Spike:
+Condition: Current year’s DBU consumption exceeds previous year by significant margin (e.g., 20%).
+
+⸻
+
+6. Data Security and Governance
+	•	Excessive Permissions Granted:
+Condition: Elevated permissions granted frequently within short intervals.
+	•	Unusual Data Access Patterns:
+Condition: Sudden spike in access requests to sensitive schemas or tables.
+
+⸻
+
+Recommendations on Alert Severity:
+	•	Critical Alerts:
+Immediate actions required (e.g., cluster downtime, job failures, security risks).
+	•	Warning Alerts:
+Investigate promptly, may not immediately affect production.
+	•	Informational Alerts:
+Good to know but no immediate action (e.g., slight increase in usage, moderate fluctuations).
+
+⸻
+
+Additional Best Practices:
+	•	Anomaly Detection:
+Use Datadog’s built-in anomaly detection for auto-baseline thresholds.
+	•	Auto-Remediation:
+Consider integrating Datadog alerts with automation scripts or runbooks for immediate remediation.
+
+These alerts help ensure proactive monitoring and quick response to potential issues, improving overall reliability and security of your Databricks environment.
